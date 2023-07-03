@@ -16,6 +16,10 @@ let playerCounter = 0;
 let computerCounter = 0;
 
 playRound = (playerSelection, computerSelection) => {
+        playerSelection = prompt('Rock, Paper or Scissors?');
+        playerSelection = playerSelection.toLowerCase();
+        computerSelection = getComputerChoice();
+
     if (playerSelection === computerSelection) {
         return 'It\'s a tie!';
     } else if (playerSelection === 'rock') {
@@ -45,15 +49,12 @@ playRound = (playerSelection, computerSelection) => {
     }
 }
 
-game = (playerCounter, computerCounter) => {
+game = (playerSelection, computerSelection) => {
+    
     while (playerCounter < 5 && computerCounter < 5) {
-        let playerSelection = prompt('Rock, Paper or Scissors?');
-        playerSelection = playerSelection.toLowerCase();
-        const computerSelection = getComputerChoice();
-        
         console.log(playRound(playerSelection, computerSelection));
         console.log('Player score: ' + playerCounter + ', Computer score: ' + computerCounter);
-    } 
+    }
 
     if (playerCounter === 5) {
         console.log('You win!');
@@ -61,7 +62,7 @@ game = (playerCounter, computerCounter) => {
         console.log('You lose!');
     }
 }
-
+console.log('Hello, world!');
 game();
 
 
