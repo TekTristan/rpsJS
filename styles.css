@@ -21,7 +21,7 @@ body {
     flex-direction: row;
 }
 
-.box {
+.rbox, .pbox, .sbox {
     width: 100px;
     height: 100px;
     background-color: white;
@@ -34,6 +34,12 @@ body {
     font-weight: bold;
     color: black;
     transition: 0.5s;
+    
+}
+
+.rbox:hover, .pbox:hover, .sbox:hover {
+    border: blue 1px solid;
+    transform: scale(1.2);
 }
 
 .containerThree {
@@ -45,16 +51,14 @@ body {
 .scoreHolder {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    gap: 10px;
+    justify-content: space-evenly;
+    gap: 110px;
 }
 
 .pScore, .cScore {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    gap: 10px;
 }
 
 
