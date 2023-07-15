@@ -4,10 +4,57 @@ body {
     background: linear-gradient(lightblue , black);
 }
 
-#container {
+.containerOne {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%;
 }
+
+.containerTwo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boxHolder {
+    display: flex;
+    flex-direction: row;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border: 1px solid black;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    font-weight: bold;
+    color: black;
+    transition: 0.5s;
+}
+
+.containerThree {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scoreHolder {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.pScore, .cScore {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+
