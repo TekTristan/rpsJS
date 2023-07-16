@@ -5,47 +5,130 @@
     <title>Rock Paper Scissors Game</title>
 </head>
 <body>
-    <div containerOne >
+    <div class="containerOne" >
         <div class ="fText">
             <h1>Rock Paper Scissors</h1>
-            <h2>Choose your weapon!</h2>
+            <h1>Choose your weapon!</h1>
         </div>
     </div>
-    <div containerTwo >
+    <div class="containerTwo" >
         <div class = "boxHolder">
-            <div class = "box">
-                <img src="images/rock.png" alt="Rock" width="150" height="150">
-                <button class="button" onclick="myFunction()">Rock</button>
+            <div class="rbox">
+                <img src="images/rock.png" alt="Rock" width="100" height="100">
             </div>
-            <div class = "box">
-                <img src="images/paper.png" alt="Paper" width="150" height="150">
-                <button class="button" onclick="myFunction()">Paper</button>
+            <div class="pbox">
+                <img src="images/paper.jpg" alt="Paper" width="100" height="100">
             </div>
-            <div class = "box">
-                <img src="images/scissors.png" alt="Scissors" width="150" height="150">
-                <button class="button" onclick="myFunction()">Scissors</button>
+            <div class="sbox">
+                <img src="images/scissors.png" alt="Scissors" width="100" height="100">
             </div>
     </div>
-    <div containerThree >
-        <div class="pC">
-            <h2>Player Choice</h2>
-            <h2>Computer Choice</h2>
-        </div>
-
-        <div class="scoreHolder">
-            <div class="pScore">
-
+    </div>
+    <div class="containerThree" >
+            <div class="scoreHolder">
+                <div class="pep">
+                    <h2>Player Choice</h2>
+                    <div id = "pScore">
+                  
+                    </div>
+                </div>
+                <div class="comp">
+                    <h2>Computer Choice</h2>
+                    <div id = "cScore">
+                        
+                       
+                    </div>
+                </div>
             </div>
-            <div class="cScore">
-                
-            </div>
-        </div>
-
     </div>
 
+    <div class="containerFour" >
+        <div id="message">
+            
+        </div>
+    </div>
+
+    <div class="containerFive" >
+        <div id="fMessage">
+            
+        </div>
+    </div>
 
     <script>
+    let playerCounter = 0;
+    let computerCounter = 0;
     
+    const rock = document.querySelector('.rbox');
+    const paper = document.querySelector('.pbox');
+    const scissors = document.querySelector('.sbox');
+
+    const playerScore = document.querySelector('#pScore');
+    const computerScore = document.querySelector('#cScore');
+
+    const message = document.querySelector('#message');
+    const fMessage = document.querySelector('#fMessage');
+    
+    playerScore.textContent = playerCounter;
+    computerScore.textContent = computerCounter;
+
+    getComputerChoice = () => {
+        const getChoice = ['rock', 'paper', 'scissors'];
+        const randomNumber = Math.floor(Math.random() * 3);
+
+        return getChoice[randomNumber];
+    }
+
+    getPlayerChoice = () => {
+        rock.addEventListener('click', () => {
+            playGame('rock');
+        })
+        paper.addEventListener('click', () => {
+            playGame('paper');
+        })
+        scissors.addEventListener('click', () => {
+            playGame('scissors');
+        })
+    }
+    
+    getPlayerChoice();
+
+    playGame = (playerSelection) => {
+        let computerSelection = getComputerChoice();
+
+    if (playerSelection === computerSelection) {
+        message.textContent = 'It\'s a tie!';
+    } else if (playerSelection === 'rock') {
+        if (computerSelection === 'paper') {
+            computerCounter += 1;
+            computerScore.textContent = computerCounter;
+            message.textContent = 'You lose! Paper beats Rock';
+        } else {
+            playerCounter += 1;
+            playerScore.textContent = playerCounter;
+            message.textContent = 'You win! Rock beats Scissors';
+        }
+    } else if (playerSelection === 'paper') {
+        if (computerSelection === 'scissors') {
+            computerCounter += 1;
+            computerScore.textContent = computerCounter;
+            message.textContent = 'You lose! Scissors beats Paper';
+        } else {
+            playerCounter += 1;
+            playerScore.textContent = playerCounter;
+            message.textContent = 'You win! Paper beats Rock';
+        }
+    } else if (playerSelection === 'scissors') {
+        if (computerSelection === 'rock') {
+            computerCounter += 1;
+            computerScore.textContent = computerCounter;
+            message.textContent = 'You lose! Rock beats Scissors';
+        } else {
+            playerCounter += 1;
+            playerScore.textContent = playerCounter;
+            message.textContent = 'You win! Scissors beats Paper';
+        }
+    }
+}
 
     </script>
 </body>
