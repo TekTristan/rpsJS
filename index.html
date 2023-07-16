@@ -26,22 +26,30 @@
     </div>
     <div class="containerThree" >
             <div class="scoreHolder">
-                <div class="pScore">
+                <div class="pep">
                     <h2>Player Choice</h2>
-                    <h1>0</h1>
+                    <div id = "pScore">
+                  
+                    </div>
                 </div>
-                <div class="cScore">
+                <div class="comp">
                     <h2>Computer Choice</h2>
-                    <h1>0</h1>
+                    <div id = "cScore">
+                        
+                       
+                    </div>
                 </div>
             </div>
     </div>
 
     <div class="containerFour" >
-        <div class="win">
+        <div id="message">
             
         </div>
-        <div class="loss">
+    </div>
+
+    <div class="containerFive" >
+        <div id="fMessage">
             
         </div>
     </div>
@@ -53,7 +61,74 @@
     const rock = document.querySelector('.rbox');
     const paper = document.querySelector('.pbox');
     const scissors = document.querySelector('.sbox');
+
+    const playerScore = document.querySelector('#pScore');
+    const computerScore = document.querySelector('#cScore');
+
+    const message = document.querySelector('#message');
+    const fMessage = document.querySelector('#fMessage');
     
+    playerScore.textContent = playerCounter;
+    computerScore.textContent = computerCounter;
+
+    getComputerChoice = () => {
+        const getChoice = ['rock', 'paper', 'scissors'];
+        const randomNumber = Math.floor(Math.random() * 3);
+
+        return getChoice[randomNumber];
+    }
+
+    getPlayerChoice = () => {
+        rock.addEventListener('click', () => {
+            playGame('rock');
+        })
+        paper.addEventListener('click', () => {
+            playGame('paper');
+        })
+        scissors.addEventListener('click', () => {
+            playGame('scissors');
+        })
+    }
+    
+    getPlayerChoice();
+
+    playGame = (playerSelection) => {
+        let computerSelection = getComputerChoice();
+
+    if (playerSelection === computerSelection) {
+        message.textContent = 'It\'s a tie!';
+    } else if (playerSelection === 'rock') {
+        if (computerSelection === 'paper') {
+            computerCounter += 1;
+            computerScore.textContent = computerCounter;
+            message.textContent = 'You lose! Paper beats Rock';
+        } else {
+            playerCounter += 1;
+            playerScore.textContent = playerCounter;
+            message.textContent = 'You win! Rock beats Scissors';
+        }
+    } else if (playerSelection === 'paper') {
+        if (computerSelection === 'scissors') {
+            computerCounter += 1;
+            computerScore.textContent = computerCounter;
+            message.textContent = 'You lose! Scissors beats Paper';
+        } else {
+            playerCounter += 1;
+            playerScore.textContent = playerCounter;
+            message.textContent = 'You win! Paper beats Rock';
+        }
+    } else if (playerSelection === 'scissors') {
+        if (computerSelection === 'rock') {
+            computerCounter += 1;
+            computerScore.textContent = computerCounter;
+            message.textContent = 'You lose! Rock beats Scissors';
+        } else {
+            playerCounter += 1;
+            playerScore.textContent = playerCounter;
+            message.textContent = 'You win! Scissors beats Paper';
+        }
+    }
+}
 
     </script>
 </body>
