@@ -90,45 +90,57 @@
         })
     }
     
+    
     getPlayerChoice();
-
     playGame = (playerSelection) => {
         let computerSelection = getComputerChoice();
 
-    if (playerSelection === computerSelection) {
-        message.textContent = 'It\'s a tie!';
-    } else if (playerSelection === 'rock') {
-        if (computerSelection === 'paper') {
-            computerCounter += 1;
-            computerScore.textContent = computerCounter;
-            message.textContent = 'You lose! Paper beats Rock';
-        } else {
-            playerCounter += 1;
-            playerScore.textContent = playerCounter;
-            message.textContent = 'You win! Rock beats Scissors';
+        if (playerCounter < 5 && computerCounter < 5) {
+            if (playerSelection === computerSelection) {
+            message.textContent = "It's a tie!";
+            } else if (playerSelection === 'rock') {
+            if (computerSelection === 'paper') {
+                computerCounter += 1;
+                computerScore.textContent = computerCounter;
+                message.textContent = 'You lose! Paper beats Rock';
+            } else {
+                playerCounter += 1;
+                playerScore.textContent = playerCounter;
+                message.textContent = 'You win! Rock beats Scissors';
+            }
+            } else if (playerSelection === 'paper') {
+            if (computerSelection === 'scissors') {
+                computerCounter += 1;
+                computerScore.textContent = computerCounter;
+                message.textContent = 'You lose! Scissors beats Paper';
+            } else {
+                playerCounter += 1;
+                playerScore.textContent = playerCounter;
+                message.textContent = 'You win! Paper beats Rock';
+            }
+            } else if (playerSelection === 'scissors') {
+            if (computerSelection === 'rock') {
+                computerCounter += 1;
+                computerScore.textContent = computerCounter;
+                message.textContent = 'You lose! Rock beats Scissors';
+            } else {
+                playerCounter += 1;
+                playerScore.textContent = playerCounter;
+                message.textContent = 'You win! Scissors beats Paper';
+            }
+            }
         }
-    } else if (playerSelection === 'paper') {
-        if (computerSelection === 'scissors') {
-            computerCounter += 1;
-            computerScore.textContent = computerCounter;
-            message.textContent = 'You lose! Scissors beats Paper';
-        } else {
-            playerCounter += 1;
-            playerScore.textContent = playerCounter;
-            message.textContent = 'You win! Paper beats Rock';
+
+        if (playerCounter === 5) {
+            fMessage.textContent = 'You have beat the computer virus from infecting the Earth!';
+        } else if (computerCounter === 5) {
+            fMessage = 'Humanity has fallen..';
         }
-    } else if (playerSelection === 'scissors') {
-        if (computerSelection === 'rock') {
-            computerCounter += 1;
-            computerScore.textContent = computerCounter;
-            message.textContent = 'You lose! Rock beats Scissors';
-        } else {
-            playerCounter += 1;
-            playerScore.textContent = playerCounter;
-            message.textContent = 'You win! Scissors beats Paper';
         }
-    }
-}
+
+
+
+
 
     </script>
 </body>
