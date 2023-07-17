@@ -48,17 +48,13 @@
         </div>
     </div>
 
-    <div class="containerFive" >
+    <div class="containerFive">
         <div id="fMessage">
             
         </div>
     </div>
 
-    <div class="containerSix" >
-        <div id = "try">
-            
-        </div>
-    </div>
+ 
 
     <script>
     let playerCounter = 0;
@@ -73,9 +69,9 @@
 
     const message = document.querySelector('#message');
     const fMessage = document.querySelector('#fMessage');
-    const tMessage = document.createElement('#tMessage');
+    const tMessage = document.createElement('div');
+    tMessage.id = 'tMessage';
 
-    const tryAgain = document.querySelector('#try');
     const tryButt = document.createElement('button');
     
     tryButt.addEventListener ('click', () => {
@@ -85,7 +81,8 @@
         computerScore.textContent = computerCounter;
         message.textContent = '';
         fMessage.textContent = '';
-        tryAgain.removeChild(tryButt);
+        fMessage.removeChild(tryButt);
+        fMessage.removeChild(tMessage);
     })
 
     playerScore.textContent = playerCounter;
@@ -152,12 +149,14 @@
         }
 
         if (playerCounter === 5) {
-            fMessage.textContent = 'You have beat the computer virus from infecting the Earth!';
-            tryAgain.appendChild(tryButt);
+            fMessage.appendChild(tMessage);
+            tMessage.textContent = 'Humanity has been saved!';
+            tMessage.appendChild(tryButt);
             tryButt.textContent = 'Play Again';
         } else if (computerCounter === 5) {
-            fMessage.textContent = 'Humanity has fallen..';
-            tryAgain.appendChild(tryButt);
+            fMessage.appendChild(tMessage);
+            tMessage.textContent = 'Humanity has fallen....';
+            tMessage.appendChild(tryButt);
             tryButt.textContent = 'Try Again';
         }
         }
