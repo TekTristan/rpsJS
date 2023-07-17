@@ -71,33 +71,31 @@ body {
 
 #fMessage {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 50px;
-    font-weight: bold;
-}
-
-.containerSix {
-    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-size: 50px;
+    font-weight: bold;
 }
 
-.button {
-    width: 100px;
-    height: 100px;
-    background-color: white;
-    border: 1px solid black;
-    margin: 10px;
+
+
+#tMessage {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 50px;
-    font-weight: bold;
-    color: black;
-    transition: 0.5s;
-    
+    flex-direction: column;
+    z-index: 1000;
+    color: white;
+    font-size: 2em;
+    text-align: center;
 }
 
+  
 
