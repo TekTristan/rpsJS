@@ -60,7 +60,9 @@ body {
     flex-direction: row;
 }
 
-.rbox, .pbox, .sbox {
+.boxHolder .rbox,
+.boxHolder .pbox,
+.boxHolder .sbox {
     width: 100px;
     height: 100px;
     background-color: transparent;

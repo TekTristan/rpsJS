@@ -9,16 +9,16 @@
     <div class="containerZero">
 
     </div>
-<!-- 
+
     <div class="containerOne" >
-        <div class ="fText">
+        <!-- <div class ="fText">
             <h1>Rock Paper Scissors</h1>
             <h1>Choose your weapon!</h1>
-        </div>
+        </div> -->
     </div>
     
     <div class="containerTwo" >
-        <div class = "boxHolder">
+        <!-- <div class = "boxHolder">
             <div class="rbox">
                 <img src="images/rock.png" alt="Rock" width="100" height="100">
             </div>
@@ -28,10 +28,10 @@
             <div class="sbox">
                 <img src="images/scissors.png" alt="Scissors" width="100" height="100">
             </div>
-    </div>
+    </div> -->
     </div>
     <div class="containerThree" >
-            <div class="scoreHolder">
+            <!-- <div class="scoreHolder">
                 <div class="pep">
                     <h2>Player Choice</h2>
                     <div id = "pScore">
@@ -45,7 +45,7 @@
                        
                     </div>
                 </div>
-            </div>
+            </div> -->
     </div>
 
     <div class="containerFour" >
@@ -58,17 +58,58 @@
         <div id="fMessage">
             
         </div>
-    </div> -->
+    </div>
 
  
 
     <script>
     let playerCounter = 0;
     let computerCounter = 0;
+    
     const containerZero = document.querySelector('.containerZero');
     const rock = document.querySelector('.rbox');
     const paper = document.querySelector('.pbox');
     const scissors = document.querySelector('.sbox');
+    
+    const containerOne = document.querySelector('.containerOne');
+    const containerTwo = document.querySelector('.containerTwo');
+    const containerThree = document.querySelector('.containerThree');
+    const containerFour = document.querySelector('.containerFour');
+    const containerFive = document.querySelector('.containerFive');
+
+    const fText = document.createElement('div');
+    fText.classList.add('fText');
+    const fText1 = document.createElement('h1');
+    fText1.textContent = 'Rock Paper Scissors';
+    const fText2 = document.createElement('h1');
+    fText2.textContent = 'Choose your weapon!';
+
+    const boxHolder = document.createElement('div');
+    boxHolder.classList.add('boxHolder');
+    const rBox = document.createElement('div');
+    rBox.classList.add('rox');
+    const imgR = document.createElement('img');
+    // imgR.src = 'images/rock.png';
+    const pBox = document.createElement('div');
+    pBox.classList.add('pbox');
+    const imgP = document.createElement('img');
+    // imgP.src = 'images/paper.jpg';
+    const sBox = document.createElement('div');
+    sBox.classList.add('sbox');
+    const imgS = document.createElement('img');
+    // imgS.src = 'images/scissors.png';
+
+    const scoreHolder = document.createElement('div');
+    scoreHolder.classList.add('scoreHolder');
+    const pep = document.createElement('div');
+    const pepH2 = document.createElement('h2');
+    pepH2.textContent = 'Player Choice';
+    pep.classList.add('pep');
+    const comp = document.createElement('div');
+    const compH2 = document.createElement('h2');
+    compH2.textContent = 'Computer Choice';
+    comp.classList.add('comp');
+
 
     const playerScore = document.querySelector('#pScore');
     const computerScore = document.querySelector('#cScore');
@@ -79,8 +120,6 @@
     tMessage.id = 'tMessage';
 
     const tryButt = document.createElement('button');
-    
-    firstMessage = () => {
         const firstMessage = document.createElement('div');
         const secondMessage = document.createElement('div');
         const thirdMessage = document.createElement('div');
@@ -89,28 +128,39 @@
         secondMessage.id = 'secondMessage';
         thirdMessage.id = 'thirdMessage';
         fourthMessage.id = 'fourthMessage';
-        firstMessage.textContent = 'A computer virus has taken the world hostage!';
-        secondMessage.textContent = 'You have to play a game or Rock, Paper, Scissors to save humanity!';
-        thirdMessage.textContent = 'Will you help?';
-        fourthMessage.textContent = 'I WANNA SAVE THE EARTH!';
         containerZero.appendChild(firstMessage);
         containerZero.appendChild(secondMessage);
         containerZero.appendChild(thirdMessage);
         containerZero.appendChild(fourthMessage);
-    }
+        firstMessage.textContent = 'A computer virus has taken the world hostage!';
+        secondMessage.textContent = 'You have to play a game or Rock, Paper, Scissors to save humanity!';
+        thirdMessage.textContent = 'Will you help?';
+        fourthMessage.textContent = 'I WANNA SAVE THE EARTH!';
 
-    game = () => {
-
-    }
     
-    // fourthMessage.addEventListener ('click', () => {
-    //     containerZero.removeChild(firstMessage);
-    //     containerZero.removeChild(secondMessage);
-    //     containerZero.removeChild(thirdMessage);
-    //     containerZero.removeChild(fourthMessage);
+    fourthMessage.addEventListener ('click', () => {
+        containerZero.removeChild(firstMessage);
+        containerZero.removeChild(secondMessage);
+        containerZero.removeChild(thirdMessage);
+        containerZero.removeChild(fourthMessage);
+        containerOne.appendChild(fText);
+        fText.appendChild(fText1);
+        fText.appendChild(fText2);
+        containerTwo.appendChild(boxHolder);
+        boxHolder.appendChild(rBox);
+        rBox.appendChild(imgR);
+        boxHolder.appendChild(pBox);
+        pBox.appendChild(imgP);
+        boxHolder.appendChild(sBox);
+        sBox.appendChild(imgS);
+        containerThree.appendChild(scoreHolder);
+        scoreHolder.appendChild(pep);
+        pep.appendChild(pepH2);
+        scoreHolder.appendChild(comp);
+        comp.appendChild(compH2);
 
-    // })
-    firstMessage();
+    })
+
 
     tryButt.addEventListener ('click', () => {
         playerCounter = 0;
