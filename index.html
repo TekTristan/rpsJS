@@ -6,7 +6,7 @@
         </head>
         <body>
             <div class="containerZero">
-
+                
             </div>
 
             <div class="containerOne">
@@ -43,6 +43,7 @@
                 tMessage.id = 'tMessage';
 
                 const containerZero = document.querySelector('.containerZero');
+                containerZero.id = 'containerZero';
 
                 const fText = document.createElement('div');
                 fText.classList.add('fText');
@@ -106,10 +107,7 @@
                 computerScore.id = 'cScore';
 
         fourthMessage.addEventListener('click', () => {
-                    containerZero.removeChild(firstMessage);
-                containerZero.removeChild(secondMessage);
-                containerZero.removeChild(thirdMessage);
-                containerZero.removeChild(fourthMessage);
+                containerZero.remove();
                 containerOne.appendChild(fText);
                 fText.appendChild(fText1);
                 fText.appendChild(fText2);
@@ -157,7 +155,7 @@
         };
 
         playGame = (playerSelection) => {
-                    let computerSelection = getComputerChoice();
+                let computerSelection = getComputerChoice();
 
                 if (playerCounter < 5 && computerCounter < 5) {
                 if (playerSelection === computerSelection) {
@@ -210,7 +208,7 @@
         }
     
     tryButt.addEventListener ('click', () => {
-                    playerCounter = 0;
+                playerCounter = 0;
                 computerCounter = 0;
                 playerScore.textContent = playerCounter;
                 computerScore.textContent = computerCounter;
