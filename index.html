@@ -5,12 +5,18 @@
     <title>Rock Paper Scissors Game</title>
 </head>
 <body>
+
+    <div class="containerZero">
+
+    </div>
+<!-- 
     <div class="containerOne" >
         <div class ="fText">
             <h1>Rock Paper Scissors</h1>
             <h1>Choose your weapon!</h1>
         </div>
     </div>
+    
     <div class="containerTwo" >
         <div class = "boxHolder">
             <div class="rbox">
@@ -52,14 +58,14 @@
         <div id="fMessage">
             
         </div>
-    </div>
+    </div> -->
 
  
 
     <script>
     let playerCounter = 0;
     let computerCounter = 0;
-    
+    const containerZero = document.querySelector('.containerZero');
     const rock = document.querySelector('.rbox');
     const paper = document.querySelector('.pbox');
     const scissors = document.querySelector('.sbox');
@@ -74,6 +80,38 @@
 
     const tryButt = document.createElement('button');
     
+    firstMessage = () => {
+        const firstMessage = document.createElement('div');
+        const secondMessage = document.createElement('div');
+        const thirdMessage = document.createElement('div');
+        const fourthMessage = document.createElement('button');
+        firstMessage.id = 'firstMessage';
+        secondMessage.id = 'secondMessage';
+        thirdMessage.id = 'thirdMessage';
+        fourthMessage.id = 'fourthMessage';
+        firstMessage.textContent = 'A computer virus has taken the world hostage!';
+        secondMessage.textContent = 'You have to play a game or Rock, Paper, Scissors to save humanity!';
+        thirdMessage.textContent = 'Will you help?';
+        fourthMessage.textContent = 'I WANNA SAVE THE EARTH!';
+        containerZero.appendChild(firstMessage);
+        containerZero.appendChild(secondMessage);
+        containerZero.appendChild(thirdMessage);
+        containerZero.appendChild(fourthMessage);
+    }
+
+    game = () => {
+
+    }
+    
+    // fourthMessage.addEventListener ('click', () => {
+    //     containerZero.removeChild(firstMessage);
+    //     containerZero.removeChild(secondMessage);
+    //     containerZero.removeChild(thirdMessage);
+    //     containerZero.removeChild(fourthMessage);
+
+    // })
+    firstMessage();
+
     tryButt.addEventListener ('click', () => {
         playerCounter = 0;
         computerCounter = 0;
