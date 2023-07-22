@@ -71,6 +71,7 @@ body {
 .containerOne {
     display: flex;
     justify-content: center;
+    height: 25vh;
     align-items: center;
 }
 
@@ -88,11 +89,13 @@ body {
 .boxHolder {
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
+    gap: 50px;
 }
 
 .rbox, .pbox, .sbox{
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     background-color: transparent;
     border: 1px solid white;
     margin: 10px;
@@ -114,6 +117,7 @@ body {
     border: greenyellow 1px solid;
     transform: scale(1.2);
 }
+
 
 .containerThree {
     display: flex;
@@ -184,7 +188,7 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(228, 15, 15, 0.568);
+    background-color: rgba(179, 48, 48, 0.568);
     display: flex;
     justify-content: center;
     align-items: center;
