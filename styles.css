@@ -88,6 +88,9 @@ body {
 
 .boxHolder {
     display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 50px;
 }
 
 .rbox, .pbox, .sbox{
