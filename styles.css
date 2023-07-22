@@ -1,8 +1,9 @@
 body {
     margin: 0;
     height: 100vh;
-    background-color: cyan;
+    background-color: black;
 }
+
 
 .containerZero {
     display: flex;
@@ -59,25 +60,22 @@ body {
 
 
 #fourthMessage {
-    
+    position: relative;
+    opacity: 0;
+    left: 100px;
+    animation: slideIn 1.5s forwards; 
+    animation-delay: 5s;  
 }
-
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-    
 
 
 .containerOne {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.fText {
+    color: white;
 }
 
 .containerTwo {
@@ -96,14 +94,14 @@ body {
     width: 100px;
     height: 100px;
     background-color: transparent;
-    border: 1px solid black;
+    border: 1px solid white;
     margin: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 50px;
     font-weight: bold;
-    color: black;
+    color: white;
     transition: 0.5s;
 }
 
@@ -113,7 +111,7 @@ body {
 }
 
 .rbox:hover, .pbox:hover, .sbox:hover {
-    border: blue 1px solid;
+    border: greenyellow 1px solid;
     transform: scale(1.2);
 }
 
@@ -136,12 +134,19 @@ body {
     align-items: center;
 }
 
+#cScore, #pScore {
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+}
+
 #message {
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 50px;
     font-weight: bold;
+    color: white;
 }
 
 #fMessage {
@@ -151,6 +156,7 @@ body {
     align-items: center;
     font-size: 50px;
     font-weight: bold;
+    color: white;
 }
 
 
@@ -161,7 +167,24 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(56, 112, 231, 0.568);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1000;
+    color: white;
+    font-size: 2em;
+    text-align: center;
+}
+
+#t2Message {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(228, 15, 15, 0.568);
     display: flex;
     justify-content: center;
     align-items: center;

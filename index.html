@@ -40,7 +40,9 @@
                 const message = document.querySelector('#message');
                 const fMessage = document.querySelector('#fMessage');
                 const tMessage = document.createElement('div');
+                const t2Message = document.createElement('div');
                 tMessage.id = 'tMessage';
+                t2Message.id = 't2Message';
 
                 const containerZero = document.querySelector('.containerZero');
                 containerZero.id = 'containerZero';
@@ -68,7 +70,7 @@
                 firstMessage.textContent = 'A computer virus has taken the world hostage!';
                 secondMessage.textContent = 'You have to play a game of Rock, Paper, Scissors to save humanity!';
                 thirdMessage.textContent = 'Will you help?';
-                fourthMessage.textContent = 'I WANNA SAVE THE EARTH!';
+                fourthMessage.textContent = 'Start Game';
 
                 const containerOne = document.querySelector('.containerOne');
                 const containerTwo = document.querySelector('.containerTwo');
@@ -200,9 +202,9 @@
                 tMessage.appendChild(tryButt);
                 tryButt.textContent = 'Play Again';
         } else if (computerCounter === 5) {
-                    fMessage.appendChild(tMessage);
-                tMessage.textContent = 'Humanity has fallen....';
-                tMessage.appendChild(tryButt);
+                    fMessage.appendChild(t2Message);
+                t2Message.textContent = 'Humanity has fallen....';
+                t2Message.appendChild(tryButt);
                 tryButt.textContent = 'Try Again';
         }
         }
@@ -216,6 +218,7 @@
                 fMessage.textContent = '';
                 fMessage.removeChild(tryButt);
                 fMessage.removeChild(tMessage);
+                fMessage.removeChild(t2Message);
     })
 
 
