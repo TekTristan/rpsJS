@@ -89,6 +89,7 @@ body {
 .boxHolder {
     display: flex;
     flex-direction: row;
+    flex-direction: row;
     justify-content: space-evenly;
     gap: 50px;
 }
